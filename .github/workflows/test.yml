@@ -65,11 +65,11 @@ jobs:
           docker build . --file Dockerfile --tag ${{ env.SERVICE_NAME }}
 
       - name: Log into registry
-        run: echo "${{ secrets.release_docker_hub }}" | docker login -u ${{ secrets.actor_docker_hub }} -p ${{ secrets.PASSWORD }}
+        run: echo "${{ secrets.release_docker_hub }}" | docker login -u ${{ secrets.actor_docker_hub }} --password-stdin
 
       - name: Push image
         run: |
-          IMAGE_ID=rajashree17/id-repository-identity-service
+          IMAGE_ID=$NAMESPACE/$SERVICE_NAME
 
           # Change all uppercase to lowercase
           IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
