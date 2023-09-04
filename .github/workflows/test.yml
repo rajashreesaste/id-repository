@@ -1,4 +1,4 @@
-name: Identity Service Manual trigger for maven install
+name: test
 
 on: workflow_dispatch
 
