@@ -145,7 +145,7 @@ public class IdentityIssuanceProfileBuilder {
 		return null;
 	}
 	
-	private String getEmail(JsonNode identity) {
+	private String getGender(JsonNode identity) {
 		if (Objects.nonNull(getIdentityMapping().getIdentity().getGender().getValue())) {
 			return extractValue(identity.get(getIdentityMapping().getIdentity().getGender().getValue())).orElse(null);
 		}
