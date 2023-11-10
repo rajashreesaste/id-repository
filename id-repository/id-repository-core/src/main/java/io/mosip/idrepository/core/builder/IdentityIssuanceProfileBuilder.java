@@ -121,6 +121,7 @@ public class IdentityIssuanceProfileBuilder {
 		return AnonymousProfile.builder().yearOfBirth(this.getYearOfBirth(identity)).gender(this.getGender(identity))
 				.location(this.getLocation(identity)).preferredLanguage(this.getPreferredLanguage(identity))
 				.name(this.getName(identity))
+				.email(this.getEmail(identity))
 			        .channel(this.getChannel(identity)).exceptions(this.getExceptions(bioData))
 				.verified(this.getVerified(identity)).biometricInfo(this.getBiometricInfo(bioData))
 				.documents(this.getDocuments(identity)).build();
@@ -147,6 +148,12 @@ public class IdentityIssuanceProfileBuilder {
 	private String getGender(JsonNode identity) {
 		if (Objects.nonNull(getIdentityMapping().getIdentity().getGender().getValue())) {
 			return extractValue(identity.get(getIdentityMapping().getIdentity().getGender().getValue())).orElse(null);
+		}
+		return null;
+	}
+	private String getGender(JsonNode identity) {
+		if (Objects.nonNull(getIdentityMapping().getIdentity().getEmail().getValue())) {
+			return extractValue(identity.get(getIdentityMapping().getIdentity().getEmail().getValue())).orElse(null);
 		}
 		return null;
 	}
