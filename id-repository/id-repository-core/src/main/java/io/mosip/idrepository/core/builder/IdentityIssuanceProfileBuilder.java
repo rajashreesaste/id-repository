@@ -145,13 +145,13 @@ public class IdentityIssuanceProfileBuilder {
 		return null;
 	}
 	
-	private String getGender(JsonNode identity) {
+	private String getEmail(JsonNode identity) {
 		if (Objects.nonNull(getIdentityMapping().getIdentity().getGender().getValue())) {
 			return extractValue(identity.get(getIdentityMapping().getIdentity().getGender().getValue())).orElse(null);
 		}
 		return null;
 	}
-	private String getGender(JsonNode identity) {
+	private String getEmail(JsonNode identity) {
 		if (Objects.nonNull(getIdentityMapping().getIdentity().getEmail().getValue())) {
 			return extractValue(identity.get(getIdentityMapping().getIdentity().getEmail().getValue())).orElse(null);
 		}
