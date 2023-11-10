@@ -120,7 +120,7 @@ public class IdentityIssuanceProfileBuilder {
 	private AnonymousProfile buildProfile(JsonNode identity, List<BIR> bioData) {
 		return AnonymousProfile.builder().yearOfBirth(this.getYearOfBirth(identity)).gender(this.getGender(identity))
 				.location(this.getLocation(identity)).preferredLanguage(this.getPreferredLanguage(identity))
-				.name(this.getName(identity)).
+				.name(this.getName(identity))
 			        .channel(this.getChannel(identity)).exceptions(this.getExceptions(bioData))
 				.verified(this.getVerified(identity)).biometricInfo(this.getBiometricInfo(bioData))
 				.documents(this.getDocuments(identity)).build();
