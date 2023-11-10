@@ -14,6 +14,7 @@ import lombok.Data;
 public class AnonymousProfile {
 	private String yearOfBirth;
 	private String gender;
+	private String name;	
 	private List<String> location;
 	private String preferredLanguage;
 	private List<String> channel;
